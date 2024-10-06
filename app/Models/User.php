@@ -10,6 +10,8 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
+    protected $table = 'users'; // Ubah sesuai nama tabel yang benar
+
 
     /**
      * The attributes that are mass assignable.
@@ -44,4 +46,18 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+
+    protected $guarded =['nik'];
+    public static function post_by($userId)
+    {
+    $query=DB::table('users')
+    ->select('*')
+    ->where('nik', $userId)
+    ->get();
+
+    return $query;
+    }
+
+
 }
