@@ -10,7 +10,10 @@ use Illuminate\Notifications\Notifiable;
 class User extends Authenticatable
 {
     use HasFactory, Notifiable;
-    protected $table = 'users'; // Ubah sesuai nama tabel yang benar
+    protected $table = 'users'; // Nama tabel yang benar
+    protected $primaryKey = 'nik'; // Ubah ke kolom yang sesuai
+    public $incrementing = false; // Karena 'nik' bukan integer dan tidak auto-increment
+    protected $keyType = 'string'; // Jika 'nik' adalah string
 
 
     /**
@@ -19,9 +22,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name',
+        'nik',
+        'nama_user',
         'email',
         'password',
+        'alamat',
     ];
 
     /**

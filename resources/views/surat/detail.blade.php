@@ -8,7 +8,7 @@
                     <h2> Detail</h2>
                 </div>
                 <div class="pull-right">
-                    <a class="btn btn-primary" href="{{ route('posts.index') }}"> Kembali</a>
+                    <a class="btn btn-primary" href="{{ route('surat.index') }}"> Kembali</a>
                 </div>
             </div>
         </div>
@@ -18,8 +18,8 @@
         <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Nama Pasien :</strong>
-                    {{ $post->namapasien }}
+                    <strong>NIK :</strong>
+                    {{ $surat->id_user }}
                 </div>
             </div>
 
@@ -27,18 +27,8 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Jenis Kelamin:</strong>
-                    {{ $post->jeniskelamin }}
-                </div>
-            </div>
-
-
-
-
-            <div class="col-xs-12 col-sm-12 col-md-12">
-                <div class="form-group">
-                    <strong>Umur :</strong>
-                    {{ $post->umur }}
+                    <strong>Nomor Surat:</strong>
+                    {{ $surat->nomor_surat }}
                 </div>
             </div>
 
@@ -47,8 +37,8 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Keluhan :</strong>
-                    {{ $post->keluhan }}
+                    <strong>Nama File :</strong>
+                    {{ $surat->nama_file }}
                 </div>
             </div>
 
@@ -57,10 +47,15 @@
 
             <div class="col-xs-12 col-sm-12 col-md-12">
                 <div class="form-group">
-                    <strong>Obat :</strong>
-                    {{ $post->obat }}
+                    <strong>Perihal :</strong>
+                    {{ $surat->keterangan }}
                 </div>
             </div>
+
+
+
+
+            
 
 
 
